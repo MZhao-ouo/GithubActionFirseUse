@@ -12,7 +12,7 @@ on:
 
 # 工作内容
 jobs:
-  build:	# 工作内容一：build（可改任何名字）
+  it_is_only_a_name:	# 工作内容一：build（可改任何名字）
     runs-on: ubuntu-latest		# 创建工作环境
     steps:		# 步骤
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -21,3 +21,6 @@ jobs:
         
       - name: '给你的一个步骤起个名字'
         run: pip install -r requirements.txt	# 也可直接运行命令
+      
+      - name: "运行一下python文件"
+        run: python print.py
