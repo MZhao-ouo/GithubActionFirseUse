@@ -7,7 +7,7 @@ on:
   pull_request:		# 当pull仓库main时触发
     branches: [ main ]
   schedule:		# 定时触发，接受正则表达式，使用UTC时间（北京时间+8h）
-    - cron: '* * * * *'
+    - cron: '0 0 1 * *'
   workflow_dispatch:		# 可手动触发（后面介绍一个骚操作）
 
 # 工作内容
