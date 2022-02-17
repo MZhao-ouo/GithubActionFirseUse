@@ -1,0 +1,23 @@
+name: 名字随便取
+
+# on是触发条件
+on:
+  push:		# 当push到仓库main时触发
+    branches: [ main ]
+  pull_request:		# 当pull仓库main时触发
+    branches: [ main ]
+  schedule:		# 定时触发，接受正则表达式，使用UTC时间（北京时间+8h）
+    - cron: '* * * * *'
+  workflow_dispatch:		# 可手动触发（后面介绍一个骚操作）
+
+# 工作内容
+jobs:
+  build:	# 工作内容一：build（可改任何名字）
+    runs-on: ubuntu-latest		# 创建工作环境
+    steps:		# 步骤
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: 'Checkout codes'		# 检查代码（好像是必须有的一步）
+        uses: actions/checkout@v1	# 可运行github给出的一些命令
+        
+      - name: '给你的一个步骤起个名字'
+        run: pip install -r requirements.txt	# 也可直接运行命令
