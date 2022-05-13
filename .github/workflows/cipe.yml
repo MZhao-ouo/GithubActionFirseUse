@@ -37,13 +37,3 @@ jobs:
           -e EPΙC_EMAΙL \
           -e EPΙC_PASSWΟRD \
           ech0sec/awesome-epic:daddy python3 main.py claim
-       
-          
-      #获取 Epic Store 所有未在库的免费DLC
-      - name: Scaffold get --dlc
-        run: |
-          docker run --rm --pull always \
-          -v /database/cookies:/home/epic/database/cookies \
-          -e EPΙC_EMAΙL \
-          -e EPΙC_PASSWΟRD \
-          ech0sec/awesome-epic:daddy python3 main.py get --dlc
